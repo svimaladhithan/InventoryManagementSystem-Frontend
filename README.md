@@ -1,68 +1,89 @@
-**Inventory Management System**
+# Inventory Management System
 
-Admin Credentials- email- abinaya@gmail.com, password- P@ssw0rd
+## Admin Credentials:
+- **Email**: admin@gmail.com
+- **Password**: P@ssw0rd
 
-### Requirements:
+## User Credentials:
+- **Email**: user@gmail.com
+- **Password**: User@123
 
--   Design and develop an Application using the full-stack.
--   Users can view all their inventory products, stocks, order, vendor details on the dashboard.
--   Users can create, update , delete , view all their inventory product details on the dashboard (CRUD).
--   Enables users to track inventory stocks, including quantities, locations, and product details on individual components.
--   Show related notifications or alerts refill stocking and avoid running out of stock.
--   Allows users track purchase orders for inventory, including supplier information, order status, and delivery dates
--   Generate reports and analytics on important inventory details like stock levels, turnover rates, and inventory value.
+## Requirements:
+- Design and develop an application using the full-stack.
+- Users can view all their inventory products, stocks, order, vendor details on the dashboard.
+- Users can create, update, delete, and view all their inventory product details on the dashboard (CRUD).
+- Enables users to track inventory stocks, including quantities, locations, and product details on individual components.
+- Shows related notifications or alerts to refill stocking and avoid running out of stock.
+- Allows users to track purchase orders for inventory, including supplier information, order status, and delivery dates.
+- Generates reports and analytics on important inventory details like stock levels, turnover rates, and inventory value.
 
-###Frontend Development Approach:
+## Frontend Development Approach:
 
-**Project Setup and Planning:**
+### Project Setup and Planning:
+- Completed setting up the development environment with **React** and necessary dependencies.
+- Analyzed the project requirements.
 
-Completed setting up the development environment with React, and necessary dependencies.
-Analysed the project requirements.
+### UI Design and Component Implementation:
+- Implemented the user interface based on the provided requirements and additional features.
+- Created the following screens:
 
-**UI Design and Component Implementation:**
+#### Registration:
+- Displays fields where users can sign up by entering their username, email, and password.
+- Includes the option to sign up using **OAuth**.
+- After registration, the app provides the option to log in.
 
-Implemented the user interface based on the provided requirements and additional features.
-Created the following screens,
+#### Sign In:
+- Displays fields where users can sign in by entering their email and password.
+- Includes the option to sign in using **OAuth**.
 
-    **Registration Screen** -Displays the registration screen where the user can put their username, email and password.
-                            -Once the registration completed, the app will give the option to user to login
-    **Home Screen**         - Displays the app logo, contains the route for dashboard, analytics, vendors and orders.
-                            - Displays the custom loader till the data is loaded.
-    **dashboard**           - Displays the details of all the products available and gives the access to user to update and delete it.
-                            - The refill required alert will be shown when the stocks go below 20.
-                            - Only admin can able to see the "Add Product" button in the dashboard.
-                            - Add product and edit button will redirect the user to the respective page where they can perform add and edit operation.
-    **Orders**              - Displays the orders that are placed to the vendors.
-                            - Only admins can able to place the order.
-    **Vendors**             - Displays the details about the vendors and the products available with them.
-                            - Only admins can add a new vendor.
-    **Analytics**           - Displays how much each product sold every year.
+#### Home:
+- Displays the app logo and contains routes for **Dashboard**, **Analytics**, **Vendors**, and **Orders**, as well as a footer.
+- Provides the option to navigate to the **Profile** screen.
 
-**API Integration and Authentication:**
+#### Dashboard:
+- Displays details of all available products and allows all users to **update and delete** them.
+- Shows a **Refill Required** alert when stocks go below 20.
+- Includes a role-based condition where only the **Admin** can **Add Product** in the Dashboard.
+- The Add Product and Edit buttons redirect users to the respective pages to perform add and edit operations.
 
-Before implementing, tested the APIs with postman to understand the response structure for proper UI designing.
-Used fetch for the API requests.
+#### Vendors:
+- Displays details about the vendors and the products available with them.
+- Includes a role-based condition where only the **Admin** can add a **new Vendor**.
 
-**Redux Setup and State Management:**
+#### Track Orders:
+- Displays orders placed to the vendors along with their Name, Quantity, Order value, Order placed date, and Delivery status.
 
-Implemented @reduxjs/toolkit library for state management.
-Defined actions, reducers, and initial state for handling the states globally around the app.
-Integrate Redux with the app components to manage state changes.
-Integrated error handling.
+#### Analytics:
+- Displays an **animated line chart** that shows the analytics for each product sold in the last four years.
 
-**Surprise features:**
+#### Profile:
+- Displays the Profile image, Username, and Email.
+- Includes the option to update the username, email, and password.
+- Includes the option to delete the account, along with a user confirmation modal.
 
-- Added OAuth authentication for registration and login.
-- Added dark mode for the app.
-- Allows user to update their information and delete their account if needed.
-- Allows Admin to create a new vendor to the system.
+### Validation:
+- Added **React Router** for handling client-side routing.
+- Implemented **Formik and Yup** validation for Sign Up, Login, Add Products, Edit Products, Add Vendor, and Profile Update screens.
 
-**Testing:**
+### API Integration and Authentication:
+- Tested the APIs (created with backend) with Postman for proper UI designing.
+- Used `fetch` for the API requests.
 
-Tested the app's functionality, user interface, and responsiveness.
+### Redux Setup and State Management:
+- Implemented `@reduxjs/toolkit` library for state management.
+- Defined actions, reducers, and initial state for handling the states globally around the app.
+- Integrated Redux with the app components to manage state changes.
 
-**Coding standards:**
+### Surprise Features:
+- Added **OAuth authentication** for registration and login.
+- Added **Dark mode** support for the app.
+- Allowed Users to update profile information and **delete their account** if needed.
+- Allowed **Admin** to add a new vendor to the system.
 
-Followed proper naming conventions and folder structure.
-Added comments wherever necessary.
-Implemented reusable components and common utilities.
+### Testing:
+- Tested the app's functionality, user interface, and responsiveness.
+
+### Coding Standards:
+- Followed proper naming conventions and folder structure.
+- Added comments wherever necessary.
+- Implemented reusable components and common utilities.

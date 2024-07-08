@@ -74,22 +74,25 @@ const Dashboard = () => {
                   </span>
                 ) : null}
               </Table.Cell>
+              {currentuser.isAdmin && 
               <Table.Cell>
-                <Link
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                  to={`/updateProduct/${ele.id}`}
-                >
-                  Edit
-                </Link>
-              </Table.Cell>
-              <Table.Cell>
+              <Link
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                to={`/updateProduct/${ele.id}`}
+              >
+                Edit
+              </Link>
+            </Table.Cell>
+            }
+              {currentuser.isAdmin && <Table.Cell>
                 <button
                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                   onClick={() => handleDelete(ele.id)}
                 >
                   Delete
                 </button>
-              </Table.Cell>
+              </Table.Cell>}
+              
             </Table.Row>
           ))}
         </Table.Body>

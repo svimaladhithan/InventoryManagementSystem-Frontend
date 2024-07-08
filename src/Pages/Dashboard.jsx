@@ -84,14 +84,16 @@ const Dashboard = () => {
               </Link>
             </Table.Cell>
             }
-              {currentuser.isAdmin && <Table.Cell>
-                <button
+            <Table.Cell>
+              {currentuser.isAdmin && 
+                <Button
                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                   onClick={() => handleDelete(ele.id)}
                 >
                   Delete
-                </button>
-              </Table.Cell>}
+                </Button>
+              }
+              </Table.Cell>
               
             </Table.Row>
           ))}

@@ -7,7 +7,27 @@ const orderSlice = createSlice({
   },
   reducers: {
     addOrder: (state, action) => {
-      state.orders.push(action.payload);
+      state.orders = [...state.orders, action.payload];
+    },
+    addOrderFailure: (state, action) => {
+      state.error = action.payload;
+    },
+    updateOrder: (state, action) => {
+      const index = state.orders.findIndex(
+        (ele) => ele.id == action.payload.id
+      );
+      state.orders[index] = {
+        id: action.payload.id,
+        name: action.payload.name,
+        product: action.payload.product,
+        quantity: action.payload.quantity,
+        orderValue: action.payload.orderValue,
+        orderedDate: action.payload.orderedDate,
+        deliveryStatus: action.payload.deliveryStatus,
+      };
+    },
+    updateOrderFailure: (state, action) => {
+      state.error = action.payload;
     },
     getOrder: (state, action) => {
       state.orders = action.payload.map((order) => {
@@ -22,10 +42,9 @@ const orderSlice = createSlice({
         };
       });
     },
-    
   },
 });
 
-export const {addOrder, getOrder}= orderSlice.actions;
+export const { addOrder, addOrderFailure, getOrder, updateOrder, updateOrderFailure } = orderSlice.actions;
 
 export default orderSlice.reducer;

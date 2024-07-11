@@ -17,7 +17,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { currentuser } = useSelector((state) => state.user);
-  console.log(currentuser);
+  // console.log(currentuser);
   const { theme } = useSelector((state) => state.theme);
   const handleSignout = () => {
     dispatch(signOutSuccess());

@@ -9,14 +9,14 @@ const Vendors = () => {
   const apiurl= import.meta.env.VITE_API_URL;
   const vendors = useSelector((state) => state.vendors.vendor);
   const {currentuser}= useSelector((state)=>state.user)
-  console.log(vendors);
+  // console.log(vendors);
   useEffect(() => {
     fetchData();
   }, []);
   const fetchData = async () => {
     try {
       const response = await fetch(`${apiurl}/get-vendor`);
-      console.log(response);
+      // console.log(response);
       const data = await response.json();
       dispatch(getVendor(data.data));
     } catch (error) {

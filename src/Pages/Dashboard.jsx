@@ -74,7 +74,7 @@ const Dashboard = () => {
                   </span>
                 ) : null}
               </Table.Cell>
-              {currentuser.isAdmin && 
+              {currentuser.rest.isAdmin && 
               <Table.Cell>
               <Link
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -84,16 +84,18 @@ const Dashboard = () => {
               </Link>
             </Table.Cell>
             }
-            <Table.Cell>
-              {currentuser.isAdmin && 
-                <Button
+            
+              {currentuser.rest.isAdmin && 
+              <Table.Cell>
+                <button
                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                   onClick={() => handleDelete(ele.id)}
                 >
                   Delete
-                </Button>
+                </button>
+                </Table.Cell>
               }
-              </Table.Cell>
+              
               
             </Table.Row>
           ))}

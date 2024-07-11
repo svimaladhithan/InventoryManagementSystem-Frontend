@@ -18,6 +18,8 @@ import Analytics from "./Pages/Analytics";
 import OnlyAdminPrivateRoute from "./Components/OnlyAdminPrivateRoute";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CreateOrder from "./Pages/CreateOrder";
+import UpdateOrder from "./Pages/UpdateOrder";
 
 const App = () => {
   return (
@@ -32,7 +34,9 @@ const App = () => {
           <Route path="/vendors" element={<Vendors />} />
           <Route path="/orders" element={<PurchaseOrder />} />
           <Route path="/updateProduct/:id" element={<UpdateProduct />} />
+          <Route path="/updateOrder/:id" element={<UpdateOrder />} /> 
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/createOrder" element={<CreateOrder />} />
           </Route>
           <Route element={<OnlyAdminPrivateRoute />}>
           <Route path="/createVendor" element={<CreateVendor />} />

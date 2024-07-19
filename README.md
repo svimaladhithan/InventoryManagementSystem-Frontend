@@ -52,6 +52,8 @@
 
 #### Track Orders:
 - Displays orders placed to the vendors along with their Name, Quantity, Order value, Order placed date, and Delivery status.
+- Every user can place new orders with available vendors, and each user can only view the orders they have placed themselves.
+- User can able to update the delivery status.
 
 #### Analytics:
 - Displays an **animated line chart** that shows the analytics for each product sold in the last four years.

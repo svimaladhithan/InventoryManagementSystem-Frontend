@@ -98,9 +98,9 @@ const UpdateProduct = () => {
                         placeholder="Select a category"
                       >
                         <option value="">Select a category</option>
-                        <option value="Lock">Lock</option>
-                        <option value="Thermostat">Thermostat</option>
-                        <option value="Monitoring">Monitoring</option>
+                        <option value="Input Devices">Input Devices</option>
+                        <option value="Display and Graphics">Display and Graphics</option>
+                        <option value="Connectivity and Stroage">Connectivity and Storage</option>
                       </Field>
                     </div>
                     <div>
